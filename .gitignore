@@ -2,3 +2,6 @@
 
 ### Vagrant ###
 .vagrant/
+
+## Salt minion keys
+minion.p*
