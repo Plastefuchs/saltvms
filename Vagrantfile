@@ -9,14 +9,14 @@ VAGRANTFILE_API_VERSION = "2"
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.define "master" do |master|
-    master.vm.box = "utopic-cloud"
+    master.vm.box = "ubuntu/trusty32"
     master.vm.host_name = "master"
     master.vm.network :private_network, ip: "192.168.56.102"
     master.vm.provision :shell, path: "salt-master-bootstrap.sh"
   end
 
   config.vm.define "minion" do |minion|    
-    minion.vm.box = "utopic-cloud"
+    minion.vm.box = "ubuntu/trusty32"
     minion.vm.host_name = "minion"
     minion.vm.network :private_network, ip: "192.168.56.103"
     minion.vm.provision :salt do |salt|
